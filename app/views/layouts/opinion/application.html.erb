@@ -5,12 +5,12 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    "opinion/application", media: "all" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%= stylesheet_link_tag "opinion", "data-turbo-track": "reload" %>
 </head>
 <body>
-
-<%= yield %>
-
+  <main class="container mx-auto mt-28 px-5 flex">
+    <%= yield %>
+  </main>
 </body>
 </html>

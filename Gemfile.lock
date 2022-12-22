@@ -107,6 +107,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.10-arm64-darwin)
       racc (~> 1.4)
+    puma (6.0.1)
+      nio4r (~> 2.0)
     racc (1.6.1)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -146,8 +148,6 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.5.4-arm64-darwin)
-    tailwindcss-rails (2.0.21-arm64-darwin)
-      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -163,9 +163,9 @@ PLATFORMS
 DEPENDENCIES
   jsbundling-rails (~> 1.1)
   opinion!
+  puma
   sprockets-rails
   sqlite3
-  tailwindcss-rails (~> 2.0)
 
 BUNDLED WITH
    2.3.24
