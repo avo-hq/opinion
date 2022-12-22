@@ -13,3 +13,5 @@ gem "puma"
 # gem "debug", ">= 1.0.0"
 
 gem "jsbundling-rails", "~> 1.1"
+
+gem "devise", "~> 4.8"
