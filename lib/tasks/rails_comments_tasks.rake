@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :opinion do
+# task :rails_comments do
 #   # Task goes here
 # end

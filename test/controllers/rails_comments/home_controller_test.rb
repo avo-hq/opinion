@@ -1,6 +1,6 @@
 require "test_helper"
 
-module Opinion
+module RailsComments
   class HomeControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 

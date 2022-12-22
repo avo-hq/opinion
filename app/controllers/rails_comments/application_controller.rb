@@ -1,4 +1,4 @@
-module Opinion
+module RailsComments
   class ApplicationController < ActionController::Base
   end
 end

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Opinion::Engine => "/opinion"
+  mount RailsComments::Engine => "/rails_comments"
 end

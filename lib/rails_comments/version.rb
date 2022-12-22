@@ -1,3 +1,3 @@
-module Opinion
+module RailsComments
   VERSION = "0.1.0"
 end

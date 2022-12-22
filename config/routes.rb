@@ -1,3 +1,3 @@
-Opinion::Engine.routes.draw do
+RailsComments::Engine.routes.draw do
   root "home#index"
 end

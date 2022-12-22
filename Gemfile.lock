@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    opinion (0.1.0)
+    rails_comments (0.1.0)
       rails (>= 7.0.4)
 
 GEM
@@ -162,8 +162,8 @@ PLATFORMS
 
 DEPENDENCIES
   jsbundling-rails (~> 1.1)
-  opinion!
   puma
+  rails_comments!
   sprockets-rails
   sqlite3
 

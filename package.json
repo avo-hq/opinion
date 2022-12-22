@@ -9,6 +9,6 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/opinion.tailwind.css -o ./app/assets/builds/opinion.css --postcss"
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/rails_comments.tailwind.css -o ./app/assets/builds/rails_comments.css --postcss"
   }
 }

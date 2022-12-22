@@ -1,4 +1,4 @@
-module Opinion
+module RailsComments
   module ApplicationHelper
   end
 end

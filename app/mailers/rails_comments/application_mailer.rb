@@ -1,4 +1,4 @@
-module Opinion
+module RailsComments
   class ApplicationMailer < ActionMailer::Base
     default from: "from@example.com"
     layout "mailer"

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Specify your gem's dependencies in opinion.gemspec.
+# Specify your gem's dependencies in rails_comments.gemspec.
 gemspec
 
 gem "sqlite3"

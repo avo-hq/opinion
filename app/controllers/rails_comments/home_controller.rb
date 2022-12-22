@@ -1,4 +1,4 @@
-module Opinion
+module RailsComments
   class HomeController < ApplicationController
   end
 end
