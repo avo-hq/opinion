@@ -1,0 +1,13 @@
+<% if @parent.present? %>
+  <turbo-stream action="replace" target="<%= dom_id(@parent) %>">
+    <template>
+      <%= render @parent, record: @record %>
+    </template>
+  </turbo-stream>
+<% else %>
+  <turbo-stream action="append" target="<%= dom_id(@record, :comments) %>">
+    <template>
+      <%= render @comment %>
+    </template>
+  </turbo-stream>
+<% end %>

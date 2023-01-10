@@ -1,0 +1,7 @@
+<turbo-stream action="replace" target="<%= dom_id(@comment, :reactions) %>">
+  <template>
+    <%= content_tag :div, id: dom_id(@comment, :reactions) do %>
+      <%= render "reactions", comment: @comment %>
+    <% end %>
+  </template>
+</turbo-stream>

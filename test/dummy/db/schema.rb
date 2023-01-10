@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_22_103519) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_22_134304) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rails_comments_comments", force: :cascade do |t|
+    t.text "body"
+    t.string "commentable_type", null: false
+    t.string "commentable_id", null: false
+    t.string "author_type"
+    t.string "author_id"
+    t.string "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rails_comments_reactions", force: :cascade do |t|
+    t.string "emoji", null: false
+    t.string "author_type", null: false
+    t.string "author_id", null: false
+    t.integer "comment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

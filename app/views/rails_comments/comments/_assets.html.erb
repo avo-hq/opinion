@@ -1,0 +1,6 @@
+<%=
+  content_tag :style do
+    Rouge::Themes::Github.render(scope: ".highlight")
+  end
+%>
+<%= stylesheet_link_tag "/rails_comments_assets/rails_comments.css", "data-turbo-track": "reload", defer: true %>

@@ -1,0 +1,5 @@
+<%= content_tag :div, class: "space-y-4" do %>
+  <% record.comments.where(parent_id: nil).includes(:author, :reactions, :children).order(created_at: :asc).each do |comment| %>
+    <%= render comment, record: record %>
+  <% end %>
+<% end %>

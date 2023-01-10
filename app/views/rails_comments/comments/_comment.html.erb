@@ -1,0 +1,39 @@
+<% is_child = comment.parent_id.present? %>
+
+<div id="<%= dom_id(comment) %>" class="flex pb-4 <%= "border-b" unless is_child %>">
+  <div class="mr-4">
+    <%= image_tag avatar_url(comment.author), class: "rounded-full w-12" %>
+  </div>
+  <div class="flex flex-col w-full">
+    <div>
+      <span class="text-lg"><%= comment.author.name %></span>
+        <span class="text-gray-600 text-xs"><%= comment.created_at %></span>
+      <% if comment.author.id == current_user.id %>
+        <span class="text-gray-600 text-xs"> •
+        <%= button_to "Delete", rails_comments.comment_path(comment), method: :delete, form_class: "inline", class: "uppercase font-semibold", data: { turbo_confirm: "Are you sure?" } %></span>
+      <% end %>
+    </div>
+    <div class="mt-2">
+      <%= comment.parsed_body %>
+    </div>
+    <div class="flex space-x-1 mt-4">
+      <%= content_tag :div, id: dom_id(comment, :reactions) do %>
+        <%= render "rails_comments/comments/reactions", comment: comment %>
+      <% end %>
+
+      <%= render "rails_comments/comments/picker", comment: comment %>
+    </div>
+    <% if !is_child && comment.children.present? %>
+      <%= content_tag :div, class: "w-full mt-8 space-y-4" do %>
+        <% comment.children.includes(:reactions, :author).each do |child| %>
+          <%= render child, parent: comment %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% unless is_child %>
+      <%= turbo_frame_tag dom_id(comment, :reply_form), class: "mt-2" do %>
+        <%= link_to "Reply", rails_comments.new_comment_path(parent_id: comment.id), class: "inline-flex items-center rounded border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2", data: {turbo_frame: dom_id(comment, :reply_form)} %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

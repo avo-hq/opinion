@@ -1,0 +1,19 @@
+<%= form_with model: comment, scope: 'comment' do |form| %>
+  <%= form.hidden_field :commentable_type, value: record&.class %>
+  <%= form.hidden_field :commentable_id, value: record&.id %>
+  <%= form.hidden_field :author_type, value: current_user&.class %>
+  <%= form.hidden_field :author_id, value: current_user&.id %>
+  <%= form.hidden_field :parent_id, value: assigns["parent"]&.id %>
+
+  <div class="mt-2">
+    <div id="tabs-1-panel-1" class="-m-0.5 rounded-lg p-0.5" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
+      <label for="comment" class="sr-only">Comment</label>
+      <div>
+        <%= form.text_area :body, value: "", rows: 5, class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm", placeholder: "Add your comment..."%>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2 flex justify-end">
+    <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Post</button>
+  </div>
+<% end %>

@@ -1,4 +1,7 @@
-# desc "Explaining what the task does"
-# task :rails_comments do
-#   # Task goes here
-# end
+namespace :comments do
+  desc "Build for release"
+  task :build do
+    `yarn build:css`
+    `cp -r ./app/assets/builds/* ./public/rails_comments_assets`
+  end
+end

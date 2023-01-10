@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Adrian Marin"]
   spec.email       = ["adrian@adrianthedev.com"]
   spec.homepage    = "https://avohq.io"
-  spec.summary     = "RailsComments is a modern comments engine for Ruby on Rails."
-  spec.description = "RailsComments is a modern comments engine for Ruby on Rails."
+  spec.summary     = "RailsComments is a modern commenting engine for Ruby on Rails."
+  spec.description = "RailsComments is a modern commenting engine for Ruby on Rails."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
@@ -23,4 +23,9 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 7.0.4"
+  spec.add_dependency "zeitwerk", ">= 2.6.2"
+  spec.add_dependency "turbo-rails"
+  spec.add_dependency "class_variants"
+  spec.add_dependency "redcarpet"
+  spec.add_dependency "rouge"
 end

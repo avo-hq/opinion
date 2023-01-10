@@ -1,0 +1,22 @@
+<%
+  grouped_reactions = comment.reactions.group_by(&:emoji)
+
+  own_reactions = comment.reactions
+    .filter do |reaction|
+      reaction.author_id.to_i == current_user.id.to_i && reaction.author_type == current_user.class.to_s
+    end
+    .map do |reaction|
+      reaction.emoji
+    end
+    .compact
+%>
+<% if grouped_reactions.present? %>
+  <div class="flex space-x-1">
+    <% grouped_reactions.each do |emoji, reactions| %>
+      <%= button_to "#{emoji} #{reactions.count}",
+        rails_comments.react_comment_path(comment),
+        params: {reaction: emoji},
+        class: reaction_classes.render(selected: own_reactions.include?(emoji)) %>
+    <% end %>
+  </div>
+<% end %>

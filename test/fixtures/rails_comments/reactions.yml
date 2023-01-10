@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emoji: MyString
+  author_type: MyString
+  author_id: MyString
+  comment: one
+
+two:
+  emoji: MyString
+  author_type: MyString
+  author_id: MyString
+  comment: two
